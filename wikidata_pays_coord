@@ -1,0 +1,12 @@
+SELECT ?item ?itemLabel ?lat ?long WHERE {
+  
+  ?item wdt:P31 wd:Q6256;
+  p:P625 ?declaration1. # Ces lieu de découverte ont une proprieté 
+  ?declaration1 psv:P625 ?coord_geo. #Son propriété est de type coordonnées géographiques 
+  ?coord_geo wikibase:geoLatitude ?lat. #On veut maintenant les valeurs des coordonnées géographiques (ici la latitude)
+  ?coord_geo wikibase:geoLongitude ?long. #On veut maintenant les valeurs des coordonnées géographiques (ici la longitude)
+  
+  
+SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],fr" }
+  } 
+ORDER BY ?itemLabel
