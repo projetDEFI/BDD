@@ -423,9 +423,9 @@ CREATE TABLE IF NOT EXISTS `plateforme` (
 
 DROP TABLE IF EXISTS `statut_donnees_produites`;
 CREATE TABLE IF NOT EXISTS `statut_donnees_produites` (
-  `id_statut_donnees` int(1) NOT NULL AUTO_INCREMENT,
-  `nom_statut_donnees` text NOT NULL,
-  PRIMARY KEY (`id_statut_donnees`)
+  `id_statut_donnees_produites` int(1) NOT NULL AUTO_INCREMENT,
+  `nom_statut_donnees_produites` text NOT NULL,
+  PRIMARY KEY (`id_statut_donnees_produites`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -436,9 +436,9 @@ CREATE TABLE IF NOT EXISTS `statut_donnees_produites` (
 
 DROP TABLE IF EXISTS `statut_donnees_produites_plateforme`;
 CREATE TABLE IF NOT EXISTS `statut_donnees_produites_plateforme` (
-  `id_statut_donnees_plateforme` int(7) NOT NULL,
+  `id_statut_donnees_produites_plateforme` int(7) NOT NULL,
   `id_plateforme` int(7) NOT NULL,
-  `id_statut_donnees` int(1) NOT NULL
+  `id_statut_donnees_produites` int(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
