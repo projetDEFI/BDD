@@ -122,21 +122,6 @@ INSERT INTO `domaine_plateforme` (`id_domaine_plateforme`, `id_plateforme`, `id_
 -- --------------------------------------------------------
 
 --
--- Structure de la table `donnees`
---
-
-DROP TABLE IF EXISTS `donnees`;
-CREATE TABLE IF NOT EXISTS `donnees` (
-  `id_donnees` int(7) NOT NULL AUTO_INCREMENT,
-  `id_lieu` int(7) DEFAULT NULL,
-  `id_chrono` int(7) DEFAULT NULL,
-  `id_plateforme` int(7) NOT NULL,
-  PRIMARY KEY (`id_donnees`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `donnees_entrees`
 --
 
@@ -168,7 +153,7 @@ INSERT INTO `donnees_entrees` (`id_donnees_entrees`, `nom_donnees_entrees`) VALU
 DROP TABLE IF EXISTS `donnees_entrees_cor`;
 CREATE TABLE IF NOT EXISTS `donnees_entrees_cor` (
   `id_donnees_entrees_cor` int(7) NOT NULL AUTO_INCREMENT,
-  `id_donnees` int(7) NOT NULL,
+  `id_plateforme` int(7) NOT NULL,
   `id_donnees_entrees` int(2) NOT NULL,
   PRIMARY KEY (`id_donnees_entrees_cor`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -205,7 +190,7 @@ INSERT INTO `donnees_produites` (`id_donnees_produites`, `nom_donnees_produites`
 DROP TABLE IF EXISTS `donnees_produites_cor`;
 CREATE TABLE IF NOT EXISTS `donnees_produites_cor` (
   `id_donnees_produites_cor` int(7) NOT NULL AUTO_INCREMENT,
-  `id_donnees` int(7) NOT NULL,
+  `id_plateforme` int(7) NOT NULL,
   `id_donnees_produites` int(2) NOT NULL,
   PRIMARY KEY (`id_donnees_produites_cor`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -219,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `donnees_produites_cor` (
 DROP TABLE IF EXISTS `donnees_tache_cor`;
 CREATE TABLE IF NOT EXISTS `donnees_tache_cor` (
   `id_donnees_tache_cor` int(7) NOT NULL AUTO_INCREMENT,
-  `id_donnees` int(7) NOT NULL,
+  `id_plateforme` int(7) NOT NULL,
   `id_tache` int(2) NOT NULL,
   PRIMARY KEY (`id_donnees_tache_cor`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -647,8 +632,8 @@ CREATE TABLE IF NOT EXISTS `plateforme` (
   `type_validation` text,
   `charte` tinyint(1) NOT NULL,
   `nombre_contributeur` int(11) DEFAULT NULL,
-  `couverture_geo` int(7) DEFAULT NULL,
-  `couverture_chrono` int(7) DEFAULT NULL,
+  `couverture_geo_donnee` int(7) DEFAULT NULL,
+  `couverture_chrono_donnee` int(7) DEFAULT NULL,
   `degre_avancement` varchar(255) DEFAULT NULL,
   `consulter_donnees` tinyint(1) NOT NULL,
   `telecharger_donnees` tinyint(1) NOT NULL,
@@ -667,7 +652,7 @@ CREATE TABLE IF NOT EXISTS `plateforme` (
 -- Déchargement des données de la table `plateforme`
 --
 
-INSERT INTO `plateforme` (`id_plateforme`, `nom_projet`, `url_source`, `descriptif`, `ojectif_det`, `date_creation`, `statut_plateforme`, `date_inactive`, `public`, `condition_contrib`, `compte_contri`, `historique`, `carac_contributeur`, `remuneration`, `type_remuneration`, `niveau_participation`, `validation`, `type_validation`, `charte`, `nombre_contributeur`, `couverture_geo`, `couverture_chrono`, `degre_avancement`, `consulter_donnees`, `telecharger_donnees`, `statut_donnees_telechargees`, `outils_com_interne`, `lien_medias_sociaux`, `media_sociaux_det`, `lien_institution`, `lien_institution_det`, `ref_biblio`, `date_saisie`) VALUES
+INSERT INTO `plateforme` (`id_plateforme`, `nom_projet`, `url_source`, `descriptif`, `ojectif_det`, `date_creation`, `statut_plateforme`, `date_inactive`, `public`, `condition_contrib`, `compte_contri`, `historique`, `carac_contributeur`, `remuneration`, `type_remuneration`, `niveau_participation`, `validation`, `type_validation`, `charte`, `nombre_contributeur`, `couverture_geo_donnee`, `couverture_chrono_donnee`, `degre_avancement`, `consulter_donnees`, `telecharger_donnees`, `statut_donnees_telechargees`, `outils_com_interne`, `lien_medias_sociaux`, `media_sociaux_det`, `lien_institution`, `lien_institution_det`, `ref_biblio`, `date_saisie`) VALUES
 (1, 'AnnoTate', 'https://anno.tate.org.uk/', 'En plus de créer de l\'art, de nombreux artistes ont écrit des journaux intimes, des lettres et des carnets de croquis qui contiennent de nombreux détails sur leur vie et leur processus créatif. Aidez-nous à transcrire des documents de la collection de la Tate, et à révéler la vie secrète des artistes', 'AnnoTate est un outil de transcription conçu pour permettre aux bénévoles de lire et de transcrire les papiers personnels d\'artistes nés en Grande-Bretagne et émigrés, dont Josef Herman, Barbara Hepworth et Kurt Schwitters. Tirés des plus grandes archives d\'art britannique au monde - Tate Archive - les participants peuvent aider à fournir des transcriptions en texte intégral de documents manuscrits, aidant à révéler l\'inspiration et les histoires derrière certaines des plus grandes œuvres du siècle dernier.', 2015, 'Active', NULL, 'Volontaires', 'Aspects de paléographie (transcription)', 1, 0, 'Possibilité de s\'identifier via son compte Zooniverse', 1, 'Accès à des documents numérisés et non encore transcrits', 'Crowdsourcing', 1, 'Vérification par l\'équipe du Tate museum avant de mettre les transcriptions en ligne (?)', 0, NULL, NULL, NULL, NULL, 1, 0, NULL, 'Forum', 0, NULL, 1, 'Intégration des transcriptions sur le site du Tate (?)', NULL, '2019-05-01 17:11:14');
 
 -- --------------------------------------------------------
