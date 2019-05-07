@@ -64,7 +64,7 @@ echo "<br><br> Objectif(s) et enjeu(x) detailles <br><textarea name=\objectif_de
 
 echo "<br><br> Date de creation de la plateforme<br>" ;
 echo "<input type=\"number\" min=\"1980\" max=\"2099\">";
-  // On obtient l'année courante
+  // On obtient l'annÃ©e courante
   # var date = new Date();
   # var year = date.getFullYear();
 
@@ -82,7 +82,7 @@ echo "       <input type=\"text\" id=\"inactiveValue\" name=\"inactive\"> ";
 
 echo "<br><br>Pilote(s) " ; 
 
-#Reste : Lieu du pilote, langue du pilote, partenaires, financeurs, institution(s) concernée(s)
+#Reste : Lieu du pilote, langue du pilote, partenaires, financeurs, institution(s) concernÃ©e(s)
 
 #https://www.toutjavascript.com/savoir/savoir06_3.php3 
 
@@ -105,7 +105,7 @@ inactiveText.style.visibility = 'hidden';
 inactiveCheckbox.onchange = function() {
   if(inactiveCheckbox.checked) {
     inactiveText.style.visibility = 'visible';
-    inactiveText.value = '';  <!-- mais comment faire en sorte que le texte rentré ici s'enregistre dans date_inactive ??? -->
+    inactiveText.value = '';  <!-- mais comment faire en sorte que le texte rentrÃ© ici s'enregistre dans date_inactive ??? -->
   } else {
     inactiveText.style.visibility = 'hidden';
   }
