@@ -2,7 +2,6 @@
 
 echo " <h1> Suggerer une plateforme </h1> <br>" ;
 echo " <h2> Etape 1/4 : Informations generales </h2> <br>" ;
-echo "<FORM action=\"affichageinscrits-traitement.php\" method=\"post\">" ;
 
 try
 {
