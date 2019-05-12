@@ -1,0 +1,44 @@
+<html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+span{
+color: #0000FF;
+font-weight: bold;
+visibility: hidden;
+}
+ 
+//-->
+</style>
+<script type="text/javascript">
+<!--
+function Affiche()
+{
+ var elmt = document.getElementById("idDiv");
+ elmt.style.visibility ="visible";
+}
+ 
+function Cache()
+{
+ var elmt = document.getElementById("idDiv");
+ elmt.style.visibility="hidden";
+}
+ 
+//-->
+</script>
+ 
+</head>
+ 
+<body>
+<input type="button" value="Bouton" id="BNom" onmouseover="Affiche()" onmouseout="Cache()">
+<br><br>
+<div> bla bla bla</div>
+<span id="idDiv">ceci est mon texte</span>
+<div>suite du document....
+ 
+</div>
+ 
+</body>
+ 
+</html>
