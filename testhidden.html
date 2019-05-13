@@ -1,44 +1,110 @@
-<html>
-<head>
-<title></title>
-<style type="text/css">
-<!--
-span{
-color: #0000FF;
-font-weight: bold;
-visibility: hidden;
-}
- 
-//-->
-</style>
-<script type="text/javascript">
-<!--
-function Affiche()
-{
- var elmt = document.getElementById("idDiv");
- elmt.style.visibility ="visible";
-}
- 
-function Cache()
-{
- var elmt = document.getElementById("idDiv");
- elmt.style.visibility="hidden";
-}
- 
-//-->
+#faire en sorte que type de validation apparaisse que si "oui" pour "validation" est coché (et pour les autres champs qui fonctionnent de cette manière)
+#utiliser le même procédé pour afficher les définitions des niveaux de participation (crowdsourcing, intelligence distribuée, etc.)
+
+<script>
+  function Affiche(txt, idLangue)
+{ var elmtLangue = document.getElementById(idLangue);
+ elmtLangue.innerHTML = txt;
+ elmtLangue.style.visibility ="visible"; }
+function Cache(idLangue) 
+  { var elmtLangue = document.getElementById(idLangue);
+ elmtLangue.innerHTML = "&nbsp;"; //valeur par défaut
+ elmtLangue.style.visibility="hidden"; }
+  
+  function Affiche(txt, idConditions)
+{ var elmtConditions = document.getElementById(idConditions);
+ elmtConditions.innerHTML = txt;
+ elmtConditions.style.visibility ="visible"; } 
+function Cache(idConditions)
+{ var elmtConditions = document.getElementById(idConditions);
+ elmtConditions.innerHTML = "&nbsp;"; //valeur par défaut
+ elmtConditions.style.visibility="hidden"; }
+  
+   function Affiche(txt, idCarac)
+{ var elmtCarac = document.getElementById(idCarac);
+ elmtCarac.innerHTML = txt;
+ elmtCarac.style.visibility ="visible"; } 
+function Cache(idCarac)
+{ var elmtCarac = document.getElementById(idCarac);
+ elmtCarac.innerHTML = "&nbsp;"; //valeur par défaut
+ elmtCarac.style.visibility="hidden"; }
+  
+     function Affiche(txt, idRemu)
+{ var elmtRemu = document.getElementById(idRemu);
+ elmtRemu.innerHTML = txt;
+ elmtRemu.style.visibility ="visible"; } 
+function Cache(idRemu)
+{ var elmtRemu = document.getElementById(idRemu);
+ elmtRemu.innerHTML = "&nbsp;"; //valeur par défaut
+ elmtRemu.style.visibility="hidden"; }
+  
+       function Affiche(txt, idValidation)
+{ var elmtValidation = document.getElementById(idValidation);
+ elmtValidation.innerHTML = txt;
+ elmtValidation.style.visibility ="visible"; } 
+function Cache(idValidation)
+{ var elmtValidation = document.getElementById(idValidation);
+ elmtValidation.innerHTML = "&nbsp;"; //valeur par défaut
+ elmtValidation.style.visibility="hidden"; }
+  
+    function Affiche(txt, idInterne)
+{ var elmtInterne = document.getElementById(idInterne);
+ elmtInterne.innerHTML = txt;
+ elmtInterne.style.visibility ="visible"; } 
+function Cache(idInterne)
+{ var elmtInterne = document.getElementById(idInterne);
+ elmtInterne.innerHTML = "&nbsp;"; //valeur par défaut
+ elmtInterne.style.visibility="hidden"; }
+  
+      function Affiche(txt, idRS)
+{ var elmtRS = document.getElementById(idRS);
+ elmtRS.innerHTML = txt;
+ elmtRS.style.visibility ="visible"; } 
+function Cache(idRS)
+{ var elmtRS = document.getElementById(idRS);
+ elmtRS.innerHTML = "&nbsp;"; 
+ elmtRS.style.visibility="hidden"; }
+  
+        function Affiche(txt, idLieninsti)
+{ var elmtInsti = document.getElementById(idLieninsti);
+ elmtInsti.innerHTML = txt;
+ elmtInsti.style.visibility ="visible"; } 
+function Cache(idLieninsti)
+{ var elmtInsti = document.getElementById(idLieninsti);
+ elmtInsti.innerHTML = "&nbsp;"; 
+ elmtInsti.style.visibility="hidden"; }
+  
 </script>
- 
-</head>
- 
-<body>
-<input type="button" value="Bouton" id="BNom" onmouseover="Affiche()" onmouseout="Cache()">
-<br><br>
-<div> bla bla bla</div>
-<span id="idDiv">ceci est mon texte</span>
-<div>suite du document....
- 
-</div>
- 
-</body>
- 
-</html>
+
+
+<input type="button" value="i" id="BNom1" onmouseover="Affiche('Dans quelle(s) langue(s) la plateforme est-elle disponible (interface)?', 'idLangue')"
+onmouseout="Cache('idLangue')">
+<span id="idLangue">&nbsp;</span>
+<br>
+<input type="button" value="i" id="BNom1" onmouseover="Affiche('Quelles sont les compétences ou conditions exigées pour le contributeur ? (par exemple: Parrainage / Savoir / Compétences /Jugement / Production de connaissances)', 'idConditions')"
+onmouseout="Cache('idConditions')">
+<span id="idConditions">&nbsp;</span>
+<br>
+<input type="button" value="i" id="BNom1" onmouseover="Affiche('Préciser les caractéristiques du profil (nom, photo, points…)', 'idCarac')"
+onmouseout="Cache('idCarac')">
+<span id="idCarac">&nbsp;</span>
+<br>
+<input type="button" value="i" id="BNom1" onmouseover="Affiche('Par exemple : Monétaire, échange, droit d\'accès... ', 'idRemu')"
+onmouseout="Cache('idRemu')">
+<span id="idRemu">&nbsp;</span>
+<br>
+<input type="button" value="i" id="BNom1" onmouseover="Affiche('Décrire les modes de validation (par les pairs, par l\'institution, etc.). Préciser si enrichissement supplémentaire par l\'institution.', 'idValidation')"
+onmouseout="Cache('idValidation')">
+<span id="idValidation">&nbsp;</span>
+<br>
+<input type="button" value="i" id="BNom1" onmouseover="Affiche('Y a-t-il des outils de communication intégrés à la plateforme ? Qui peut communiquer avec qui ?', 'idInterne')"
+onmouseout="Cache('idInterne')">
+<span id="idInterne">&nbsp;</span>
+<br>
+<input type="button" value="i" id="BNom1" onmouseover="Affiche('Préciser s\'il y a des hashtags, pages FB ou autres utilisés par les contributeur (préciser l\'url)', 'idRS')"
+onmouseout="Cache('idRS')">
+<span id="idRS">&nbsp;</span>
+<br>
+<input type="button" value="i" id="BNom1" onmouseover="Affiche('Y a-t-il une valorisation des résultats sur le site de l\'institution?', 'idLieninsti')"
+onmouseout="Cache('idLieninsti')">
+<span id="idLieninsti">&nbsp;</span>
