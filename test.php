@@ -10,16 +10,8 @@ catch (Exception $e)
 
 echo "<HTML>
 <HEAD> <TITLE> Suggérer une plateforme </TITLE>
-<style>
-.TabCommon {FONT: 18px Verdana; COLOR: #6D6D6D; PADDING: 5px; FONT-WEIGHT: bold; TEXT-ALIGN: center; HEIGHT: 30px; WIDTH: 1000px;}
-.TabContent {PADDING: 5px;}
-.TabContentBottom {PADDING: 10px; BORDER-BOTTOM: 2px outset #99ccff;}
-.TabOff {CURSOR: hand; BACKGROUND-COLOR: #E2E2E3; BORDER-LEFT: 1px solid #BBBBBB;}
-.TabOn {CURSOR: default; BORDER-TOP: 2px outset #D1D1D1; COLOR: #000000;}
-.TabBorderBottom{BORDER-BOTTOM: 2px inset #D1D1D1;}
-.TabActiveBorderLeftRight{BORDER-RIGHT: 2px outset #D1D1D1; BORDER-LEFT: 2px outset #D1D1D1;}
-.TabActiveBackground {BACKGROUND-COLOR: #F7F8F3;}
-</style> 
+<link rel=\"stylesheet\" href=\"styles.css\" />
+
 <script>
 function TabClick( nTab ){
   Col = document.getElementsByName(\"Content\");
@@ -31,8 +23,14 @@ function TabClick( nTab ){
   document.getElementsByName(\"Content\")[nTab].style.display = \"block\";  
   document.getElementsByName(\"tabs\")[nTab].className = \"TabCommon TabOn TabActiveBackground TabActiveBorderLeftRight\";
 }
-</script>
-  
+
+ 
+     function afficher_infobulle(aide) {
+    if (aide.style.display == \"none\") aide.style.display = \"block\";
+    else aide.style.display = \"none\";
+    }
+
+</script>     
 </HEAD>
 <BODY onload=\"TabClick(0);\">
  
@@ -84,8 +82,7 @@ echo "</table> " ;
  
 
 
-echo "<br><br>Descriptif du projet : <br><textarea name=\descriptif\" cols=\"80\" rows=\"2.5\">Copier/coller le texte present sur la plateforme </textarea> "; 
-
+echo "<br><br>Descriptif du projet : <br><textarea name=\descriptif\" cols=\"80\" rows=\"2.5\">Copier/coller le texte present sur la plateforme </textarea> " ;
 
 echo "<br><br> Objectif(s) <table STYLE=\"width: 500px\">" ;
 $reponse= $bdd->query('SELECT * FROM objectif') ; 
@@ -150,7 +147,13 @@ echo "<br><br>Pilote(s) <INPUT type=\"text\" name=\"pilote\">" ;
 
 echo "<br><br>Lieu du pilote : A VENIR";
 
-echo "<br><br>Langue(s) du pilote <font color=\"grey\"> <i> <b>(restez appuyé sur CTRL pour sélectionner plusieurs choix)</b></i></font><br>" ; 
+echo "<br><br>Langue(s) du pilote <font color=\"grey\"> <i> <b>(restez appuyé sur CTRL pour sélectionner plusieurs choix)</b></i></font> 
+    <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide1'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide1'));\" width=\"15\" height=\"15\">
+    <div class=\"infobulle\">
+    <div class=\"infobulle-texte\" id=\"aide1\" style=\"display: none;\"> Dans quelle(s) langue(s) la plateforme est-elle disponible (interface)?
+    </div>
+    </div>	
+	<br>" ; 
 $reponse= $bdd->query('SELECT * FROM langue');
 echo "<SELECT name=\"langue[]\" size=10 multiple>" ; 
 while ($donnees=$reponse->fetch())
@@ -173,30 +176,66 @@ echo "</DIV>
          <DIV id=\"Content\" name=\"Content\"><h2> Etape 2/4 : Contributeurs </h2>
 Public visé : <br>
 <textarea name=\public\" cols=\"80\" rows=\"1\">Copier/coller le texte present sur la plateforme </textarea> <br><br>
-Conditions de contribution : <br>
+Conditions de contribution : 
+    <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide2'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide2'));\" width=\"15\" height=\"15\">
+    <div class=\"infobulle\">
+    <div class=\"infobulle-texte\" id=\"aide2\" style=\"display: none;\"> 
+	Quelles sont les compétences ou conditions exigées pour le contributeur ? (par exemple: Parrainage / Savoir / Compétences /Jugement / Production de connaissances)
+    </div>
+    </div>	<br>
 <textarea name=\condition_contrib\" cols=\"80\" rows=\"1.5\"></textarea>  <br><br>	 
 Compte contributeur : <input type=\"radio\" name=\"compte_contri\" value=\"1\"> Oui
 <input type=\"radio\" name=\"compte_contri\" value=\"0\"> Non <br><br>
 Historique de l'activité : <input type=\"radio\" name=\"historique\" value=\"1\"> Oui
 <input type=\"radio\" name=\"historique\" value=\"0\"> Non <br><br>
 
-Caractéristiques du profil contributeur : <br>
+Caractéristiques du profil contributeur 
+    <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide3'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide3'));\" width=\"15\" height=\"15\">
+    <div class=\"infobulle\">
+    <div class=\"infobulle-texte\" id=\"aide3\" style=\"display: none;\"> Préciser les caractéristiques du profil (nom, photo, points…)
+    </div>
+    </div>	<br>
 <textarea name=\carac_contributeur\" cols=\"80\" rows=\"1.5\"></textarea> <br><br>
 
 Rémunération des contributeurs : <input type=\"radio\" name=\"remuneration\" value=\"1\"> Oui
 <input type=\"radio\" name=\"remuneration\" value=\"0\"> Non <br><br>
-Type de rémunération : <br>
+Type de rémunération : 
+    <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide4'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide4'));\" width=\"15\" height=\"15\">
+    <div class=\"infobulle\">
+    <div class=\"infobulle-texte\" id=\"aide4\" style=\"display: none;\"> 
+	Par exemple : Monétaire, échange, droit d'accès...
+    </div>
+    </div>	<br>
 <textarea name=\type_remuneration\" cols=\"80\" rows=\"1.5\"></textarea> <br><br>
 
-Niveau de participation : <br> <TABLE STYLE=\"width: 500px\"> <TR> <TD>
-<input type=\"radio\" name=\"niveau_participation\" value=\"Crowdsourcing\"> Crowdsourcing </TD> <TD>
-<input type=\"radio\" name=\"niveau_participation\" value=\"Science participative\"> Science participative </TD> </TR> <TR> <TD>
-<input type=\"radio\" name=\"niveau_participation\" value=\"Intelligence distribuée\"> Intelligence distribuée </TD><TD>
-<input type=\"radio\" name=\"niveau_participation\" value=\"Collaboration complète\"> Collaboration complète </TD></TR></TABLE> <br>
+Niveau de participation : <br> <TABLE STYLE=\"width: 500px\"> <TR> <TD><p onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide_crowd'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide_crowd'));\" width=\"15\" height=\"15\"><input type=\"radio\" name=\"niveau_participation\" value=\"Crowdsourcing\">
+ Crowdsourcing       <span class=\"infobulle\">
+    <span class=\"infobulle-texte\" id=\"aide_crowd\" style=\"display: none;\"> 
+	Les citoyens contribuent comme capteurs de données <i>(sensors)</i></span>
+</span> </p></TD> <TD>
+<p onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide_sci'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide_sci'));\" width=\"15\" height=\"15\"><input type=\"radio\" name=\"niveau_participation\" value=\"Science participative\"> Science participative <span class=\"infobulle\">
+    <span class=\"infobulle-texte\" id=\"aide_sci\" style=\"display: none;\"> 
+	Les citoyens contribuent à la définition du problème et à la collecte de données.</span>
+</span> </p>
+ </TD> </TR> <TR> <TD>
+<p onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide_int'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide_int'));\" width=\"15\" height=\"15\"><input type=\"radio\" name=\"niveau_participation\" value=\"Intelligence distribuée\"> Intelligence distribuée <span class=\"infobulle\">
+    <span class=\"infobulle-texte\" id=\"aide_int\" style=\"display: none;\"> 
+	Les citoyens contribuent à l’interprétation de données.</span>
+</span> </p>
+</TD><TD><p onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide_collab'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide_collab'));\" width=\"15\" height=\"15\"><input type=\"radio\" name=\"niveau_participation\" value=\"Collaboration complète\"> Collaboration complète <span class=\"infobulle\">
+    <span class=\"infobulle-texte\" id=\"aide_collab\" style=\"display: none;\"> 
+	La recherche est collaborative dans les différentes phases (définition des problèmes, collecte de données, analyse).</span>
+</span> </p> </TD></TR></TABLE> <br>
 
 Validation : <input type=\"radio\" name=\"validation\" value=\"1\"> Oui
 <input type=\"radio\" name=\"validation\" value=\"0\"> Non <br><br>
-Type de validation : <br>
+Type de validation : 
+    <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide5'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide5'));\" width=\"15\" height=\"15\">
+    <div class=\"infobulle\">
+    <div class=\"infobulle-texte\" id=\"aide5\" style=\"display: none;\"> 
+	Décrire les modes de validation (par les pairs, par l'institution, etc.). Préciser si enrichissement supplémentaire par l'institution.
+    </div>
+    </div>	<br>
 <textarea name=\type_validation\" cols=\"80\" rows=\"1.5\"></textarea> <br><br>
 
 Charte d'utilisation : <input type=\"radio\" name=\"charte\" value=\"1\"> Oui
@@ -323,14 +362,32 @@ Téléchargement des données : <input type=\"radio\" name=\"telecharger_donnees
 Statut des données téléchargées : <br>
 <textarea name=\statut_donnees_telechargees\" cols=\"80\" rows=\"1.5\"></textarea>		 
 </fieldset>
-<br>Outils de communication interne : <br>
+<br>Outils de communication interne : 
+    <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide6'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide6'));\" width=\"15\" height=\"15\">
+    <div class=\"infobulle\">
+    <div class=\"infobulle-texte\" id=\"aide6\" style=\"display: none;\"> 
+	Y a-t-il des outils de communication intégrés à la plateforme ? Qui peut communiquer avec qui ?
+    </div>
+    </div>	<br>
 <textarea name=\outils_com_interne\" cols=\"80\" rows=\"1.5\"></textarea> <br><br>	 
 Lien avec les médias sociaux : <input type=\"radio\" name=\"lien_medias_sociaux\" value=\"1\"> Oui
 <input type=\"radio\" name=\"lien_medias_sociaux\" value=\"0\"> Non <br><br>		 
-Préciser les médias sociaux : <br>
+Préciser les médias sociaux : 
+    <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide7'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide7'));\" width=\"15\" height=\"15\">
+    <div class=\"infobulle\">
+    <div class=\"infobulle-texte\" id=\"aide7\" style=\"display: none;\"> 
+	Préciser s'il y a des hashtags, pages FB ou autres utilisés par les contributeurs (préciser l'url)
+    </div>
+    </div>	<br>
 <textarea name=\media_sociaux_det\" cols=\"80\" rows=\"1.5\"></textarea> 
 <br><br>
-Lien avec le site web de l'institution : <input type=\"radio\" name=\"lien_institution\" value=\"1\"> Oui
+Lien avec le site web de l'institution 
+    <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide8'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide8'));\" width=\"15\" height=\"15\">
+    <div class=\"infobulle\">
+    <div class=\"infobulle-texte\" id=\"aide8\" style=\"display: none;\"> 
+	Y a-t-il une valorisation des résultats sur le site de l'institution ?
+    </div>
+    </div> <br><input type=\"radio\" name=\"lien_institution\" value=\"1\"> Oui
 <input type=\"radio\" name=\"lien_institution\" value=\"0\"> Non <br><br>	
 Préciser le lien avec le site web de l'institution  : <br>
 <textarea name=\lien_institution_det\" cols=\"80\" rows=\"1.5\">Sous quelle forme ? (Préciser l'url)</textarea> 	 
@@ -361,4 +418,6 @@ inactiveCheckbox.onchange = function() {
     inactiveText.style.visibility = 'hidden';
   }
 };
+
+
 </script>
