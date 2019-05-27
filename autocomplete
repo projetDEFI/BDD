@@ -1,0 +1,10 @@
+https://phppot.com/jquery/jquery-ajax-autocomplete-country-example/ : pour refaire correctement autocomplete pour les institutions ???
+
+https://blog.ip2location.com/knowledge-base/creating-autocomplete-for-city-search-using-php-and-mysql-database/ : autocomplete from database
+
+OU https://www.w3schools.com/howto/howto_js_autocomplete.asp
+
+
+PARTIR SUR CA : Version SQL à importer dans notre BDD pour l'autocomplétion
+https://sql.sh/514-liste-pays-csv-xml
+(puis utiliser les autres tuto pour mettre en place l'autocomplétion en tant que telle)
