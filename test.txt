@@ -1,0 +1,6 @@
+d'abord il faut cloner le github. Je l'ai déjà fait 
+puis on se dirige vers le répertoire 
+on fait git status pour savoir les fichiers qu'on a modifié, supprimer etc ..
+
+Ici tout est à jour.
+Mais imaginons qu'on va ajouter ce fichier dans BDD
