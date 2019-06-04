@@ -1,0 +1,124 @@
+/*
+Color Panel =>
+Bleu fonce : #103852
+Bleu clair : #3d82ac
+Vert foncé : #5cbb8a
+Vert clair : #92d2c1
+Jaune : #f3de6b
+*/
+
+/*Fonts declaration*/
+/*Font logo*/
+@font-face {
+    font-family: "Vitreous";
+    src: url('../media/fonts/Vitreous-Light.ttf');
+}
+/*Font titre*/
+@font-face {
+    font-family: "Questrial";
+    src: url('../media/fonts/Questrial-Regular.ttf');
+}
+/*Fonts text*/
+@font-face {
+    font-family: "Alegreya";
+    src: url('../media/fonts/Alegreya-Regular.ttf');
+}
+@font-face {
+    font-family: "Alegreya Italic";
+    src: url('../media/fonts/Alegreya-Italic.ttf');
+}
+@font-face {
+    font-family: "Alegreya Bold";
+    src: url('../media/fonts/Alegreya-Bold.ttf');
+}
+body {
+    background-color: #103852;
+}
+.separator {
+    height: 15px;
+    background-color: #f3de6b;
+    position:relative;
+    bottom:10px;
+}
+.title {
+    color: #f3de6b;
+    text-decoration: none;
+    margin: 0 auto 100px;
+    font-family: "Vitreous", sans-serif;
+    font-size: 70px;
+}
+nav{
+    max-width:700px;
+    font-family: "Questrial", sans-serif;
+    font-size: 25px;
+    position: relative;
+    bottom:145px;
+    left:800px;
+}
+nav ul{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+nav li{
+    list-style-type: none;
+    float: left;
+}
+nav a{
+    padding: 20px 30px;
+    display: inline-block;
+    text-decoration: none;
+    color: #FFF;
+}
+.infobulle {
+    position: relative;
+    display: inline;
+    width: 0px;
+    height: 0px;
+    }
+.infobulle-texte {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    width: 200px;
+    color: #000000;
+    padding: 5px;
+    font-size: 15px;
+    background-color: #ffffe1;
+    border: 1px solid #000000;
+    }
+.form {
+    position: relative;
+    bottom:145px;
+    margin-left: 780px;
+}
+.barre {
+    width:500px;
+    height: 22px;
+    border: 2px solid #3d82ac;
+    border-radius: 5px;
+    background: #3d82ac;
+}
+.button-form {
+    font-family: "Questrial", sans-serif;
+    text-transform: uppercase;
+    color: #FFF;
+    font-size: 14px;
+    background: #3d82ac;
+    outline: 0;
+    width:200px;
+    height: 28px;
+    border: 2px solid #3d82ac;
+    border-radius: 5px;
+    position: relative;
+    right:10px;
+    bottom:1px;
+}
+.TabCommon {FONT: 18px Questrial; COLOR: #6D6D6D; PADDING: 5px; FONT-WEIGHT: bold; TEXT-ALIGN: center; HEIGHT: 30px; WIDTH: 1000px;}
+.TabContent {FONT: 18px Alegreya; PADDING: 5px;}
+.TabContentBottom {FONT: 18px Alegreya; PADDING: 10px; BORDER-BOTTOM: 2px outset #99ccff;}
+.TabOff {CURSOR: hand; BACKGROUND-COLOR: #E2E2E3; BORDER-LEFT: 1px solid #BBBBBB;}
+.TabOn {CURSOR: default; BORDER-TOP: 2px outset #D1D1D1; COLOR: #000000;}
+.TabBorderBottom{BORDER-BOTTOM: 2px inset #D1D1D1;}
+.TabActiveBorderLeftRight{BORDER-RIGHT: 2px outset #D1D1D1; BORDER-LEFT: 2px outset #D1D1D1;}
+.TabActiveBackground {BACKGROUND-COLOR: #F7F8F3;}
