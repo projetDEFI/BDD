@@ -1,3 +1,32 @@
+<?php
+require_once 'app/init.php';
+
+if(isset($_GET['q'])) {
+
+	$q = $_GET['q'];
+
+	$query = $es->search([
+		'body' => [
+		    'query' => [
+		        'bool' => [
+			    'should' => [
+        [ "match" => ["nom_projet" => $q]],
+        [ "match" => ["nom_domaine" => $q]]
+    
+          ]
+		    ]
+                ]
+	    ]
+	]);
+
+	if($query['hits']['total'] >=1 ) {
+
+		$results = $query['hits']['hits'];
+	}
+}
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 
@@ -6,6 +35,7 @@
 		<meta charset="utf-8"/>
 		<title>Collabora - Blog</title>
 		<link rel="stylesheet" type="text/css" href="../styles/index_style.css">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	
 <!-- Corps de la page -->
@@ -15,25 +45,32 @@
 		<div class="separator"></div> <!-- top lign de séparation -->
 
 		<div id="header"> <!-- Menu de navigation et logo -->
-			<a href="../index_php.php" class=title>Collabora</a>
+			<a href="../index.php" class=title>Collabora</a>
+
 			<nav>
 				<ul>
 					<li><a href="form.php">Contribuer</a></li>
-					<li><a href="visualisation.html">Visualiser</a></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="ressources.html">Ressources</a></li>
+					<li><a href="visualisation.php">Visualiser</a></li>
+					<li><a href="blog.php">Blog</a></li>
+					<li><a href="ressources.php">Ressources</a></li>
 				</ul>
 			</nav>
 			<div class="line"></div> <!-- Sous lignage du menu -->
 		</div>
 
 <!-- Barre de recherche -->
-		<div class="search">
-			<form>
-				<input type="text" name="login" class="barre"> 
-				<input type="submit" value="Recherche" placeholder="Tapez votre recherche" class="search-form">
-			</form>
-		</div>
+		<form action="results.php" method="get" autocomplete="off">
+			<div class="row">
+    			<div class="col-lg-4 col-lg-offset-4">
+        			<div class="input-group">
+          				<input type="text" name="q" placeholder="Recherchez un projet ou Tapez le nom d'un domaine" class="form-control" /> 
+            			<span class="input-group-btn"> 
+                <button type="submit" class="btn btn-primary">Rechercher </button>
+            </span>
+        </div>
+    </div>
+</div>
+</form>
 
 <!-- Menu de connexion -->
 	  	<div class="login-container"> 
@@ -78,7 +115,7 @@
 			<ul>
 		        <li><a href="">Credits</a></li>
 		        <li><a href="">Contact</a></li>
-		        <li><a href="blog.html">Blog</a></li> 
+		        <li><a href="blog.php">Blog</a></li> 
 	       </ul> 
 		</footer>
 

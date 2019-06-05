@@ -33,7 +33,7 @@ if(isset($_GET['q'])) {
 <!-- En tête -->
   <head>
     <meta charset="utf-8"/>
-    <title>Collabora BDD</title>
+    <title>Collabora - Résultats de recherche</title>
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -46,13 +46,13 @@ if(isset($_GET['q'])) {
     <div class="separator"></div> <!-- top lign de séparation -->
 
     <div id="header"> <!-- Menu de navigation et logo -->
-      <a href="index_php.php" class=title>Collabora</a>
+      <a href="index.php" class=title>Collabora</a>
       <nav>
         <ul>
           <li><a href="webapp/form.php">Contribuer</a></li>
-          <li><a href="webapp/visualisation.html">Visualiser</a></li>
-          <li><a href="webapp/blog.html">Blog</a></li>
-          <li><a href="webapp/ressources.html">Ressources</a></li>
+          <li><a href="webapp/visualisation.php">Visualiser</a></li>
+          <li><a href="webapp/blog.php">Blog</a></li>
+          <li><a href="webapp/ressources.php">Ressources</a></li>
         </ul>
       </nav>
       <div class="line"></div> <!-- Sous lignage du menu -->
@@ -152,9 +152,9 @@ if(isset($_GET['q'])) {
 <!-- Pied de page -->
     <footer> 
       <ul>
-            <li><a href="">Credits</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">Blog</a></li> 
+            <li><a href="credits.php">Credits</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="blog.php">Blog</a></li> 
          </ul> 
     </footer>
 
