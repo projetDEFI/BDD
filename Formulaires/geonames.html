@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>jeoQuery UI</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/redmond/jquery-ui.css"/>
+        <link rel="stylesheet" href="jeoquery.css" />
+    </head>
+    
+    <body class="container">
+        <div class="row">
+            <div class="well">
+                <span style="font-size: 40px; float: right; padding-top: 20px; color: #363;">GeoNames</span>
+                <h2>jeoQuery
+                    <small>by Thomas Haukland</small>
+                </h2>
+                <h3>UI plugins</h3>
+            </div>
+        </div>
+        <div class="row">
+            <p>Go on, select a country first... Try viewing the source, the select is
+                populated on load by a geonames call.</p>
+        </div>
+        <div class="row well forms-horizontal" id="countrySelect">
+            <label for="country">Country:
+                <select id="country" disabled="disabled">
+                </select>
+            </label>
+            <pre class="prettyprint">
+    &lt;select id=&quot;country&quot; disabled=&quot;disabled&quot;&gt;
+    &lt;/select&gt;</pre>
+            <pre class="prettyprint">
+    $("#country").jeoCountrySelect({
+        callback: function () {
+            $("#country").removeAttr('disabled');
+        }
+    });</pre>
+        </div>
+        <div class="row">
+            <p>Next, try to input a postal code for this country, and the place should
+                be populated by a geonames service as you leave the input(tab or mouse
+                click elsewhere).</p>
+        </div>
+        <div class="row well forms-horizontal" id="postal">
+            <label for="postalCode">Postal code:
+                <input class="input-small" id="postalCode" type="text" />
+            </label>
+            <label for="postalPlace">Postal place:
+                <input id="postalPlace" type="text"/>
+            </label>
+            <pre class="prettyprint">
+    &lt;label for=&quot;postalCode&quot;&gt;Postal code:
+        &lt;input class=&quot;input-small&quot; id=&quot;postalCode&quot; type=&quot;text&quot; /&gt;
+    &lt;/label&gt;
+    &lt;label for=&quot;postalPlace&quot;&gt;Postal place:
+        &lt;input id=&quot;postalPlace&quot; type=&quot;text&quot;/&gt;
+    &lt;/label&gt;</pre>
+            <pre class="prettyprint">
+    $("#postalCode").jeoPostalCodeLookup({
+        countryInput: $("#country"),
+        target: $("#postalPlace")
+    });</pre>
+        </div>
+        <div class="row well forms-horizontal" id="cityAutocomplete">
+            <label for="city">City autocomplete (nicked from jquery ui demo):
+                <input class="input-large" id="city" type="text"/>
+            </label>
+            <pre class="prettyprint">
+    &lt;input class=&quot;input-large&quot; id=&quot;city&quot; type=&quot;text&quot;/&gt;</pre>
+            <pre class="prettyprint">
+    $("#city").jeoCityAutoComplete();</pre>
+        </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <script src="jeoquery.js"></script>
+        <script src="tracking.js"></script>
+        <script>
+            $(function () {
+                jeoquery.defaultData.userName = 'tompi';
+                
+                $("#country").jeoCountrySelect({
+                    callback: function () {
+                        $("#country").removeAttr('disabled');
+                    }
+                });
+                $("#postalCode").jeoPostalCodeLookup({
+                    countryInput: $("#country"),
+                    target: $("#postalPlace")
+                });
+                
+                $("#city").jeoCityAutoComplete({callback: function(city) { if (console) console.log(city);}});
+                prettyPrint();
+            });
+        </script>
+    </body>
+
+</html>
