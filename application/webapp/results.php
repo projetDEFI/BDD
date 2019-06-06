@@ -1,5 +1,5 @@
 <?php
-require_once 'app/init.php';
+require_once '../app/init.php';
 
 if(isset($_GET['q'])) {
 
@@ -34,8 +34,8 @@ if(isset($_GET['q'])) {
   <head>
     <meta charset="utf-8"/>
     <title>Collabora - Résultats de recherche</title>
-    <link rel="stylesheet" type="text/css" href="styles/index_style.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../styles/index_style.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
   </head>
   
@@ -49,10 +49,10 @@ if(isset($_GET['q'])) {
       <a href="index.php" class=title>Collabora</a>
       <nav>
         <ul>
-          <li><a href="webapp/form.php">Contribuer</a></li>
-          <li><a href="webapp/visualisation.php">Visualiser</a></li>
-          <li><a href="webapp/blog.php">Blog</a></li>
-          <li><a href="webapp/ressources.php">Ressources</a></li>
+          <li><a href="form.php">Contribuer</a></li>
+          <li><a href="visualisation.php">Visualiser</a></li>
+          <li><a href="blog.php">Blog</a></li>
+          <li><a href="ressources.php">Ressources</a></li>
         </ul>
       </nav>
       <div class="line"></div> <!-- Sous lignage du menu -->
@@ -66,7 +66,7 @@ if(isset($_GET['q'])) {
           <input type="text" name="q" placeholder="Recherchez un projet ou Tapez le nom d'un domaine" class="form-control" /> 
             <span class="input-group-btn"> 
                 <button type="submit" class="btn btn-primary">Rechercher </button>
-                <a class="btn btn-danger" href="index_php.php">Revenir</a> 
+                <a class="btn btn-danger" href="index.php">Revenir</a> 
             </span>
         </div>
     </div>

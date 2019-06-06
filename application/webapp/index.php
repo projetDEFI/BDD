@@ -33,9 +33,10 @@ if(isset($_GET['q'])) {
 <!-- En tête -->
 	<head>
 		<meta charset="utf-8"/>
-		<title>Collabora - Visualisation</title>
+		<title>Collabora BDD</title>
 		<link rel="stylesheet" type="text/css" href="../styles/index_style.css">
-		<link href="../css/bootstrap.min.css" rel="stylesheet">
+  		<link href="../css/bootstrap.min.css" rel="stylesheet">
+
 	</head>
 	
 <!-- Corps de la page -->
@@ -59,17 +60,17 @@ if(isset($_GET['q'])) {
 
 <!-- Barre de recherche -->
 		<form action="results.php" method="get" autocomplete="off">
-			<div class="row">
-    			<div class="col-lg-4 col-lg-offset-4">
-        			<div class="input-group">
-          				<input type="text" name="q" placeholder="Recherchez un projet ou Tapez le nom d'un domaine" class="form-control" /> 
-            			<span class="input-group-btn"> 
-                			<button type="submit" class="btn btn-primary">Rechercher </button>
-            			</span>
-        			</div>
-   				 </div>
-			</div>
-		</form>
+<div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+        <div class="input-group">
+          <input type="text" name="q" placeholder="Recherchez un projet ou Tapez le nom d'un domaine" class="form-control" /> 
+            <span class="input-group-btn"> 
+                <button type="submit" class="btn btn-primary">Rechercher </button>
+            </span>
+        </div>
+    </div>
+</div>
+</form>
 
 <!-- Menu de connexion -->
 	  	<div class="login-container"> 
@@ -107,7 +108,28 @@ if(isset($_GET['q'])) {
 		  </form>
 		</div>
 
-		<!-- Pied de page -->
+<!-- Section de contenu du site -->
+		<section id="container"> 
+
+ <!-- Contenu 1 -->
+				<div id="main">
+					<h2>Projet ANR Collabora ?</h2>
+					<p>TEXT TEXT TEXT TEXT TEXT TEXT TEXT</p>
+				</div>
+
+<!-- Contenu 2 -->
+				<div id="about"> 
+					<h3>Projet Master DEFI</h3>
+					<ul>
+						<li>Julie</li>
+						<li>Nathan</li>
+						<li>Mickael</li>
+					</ul>
+				</div>
+
+		</section>
+
+<!-- Pied de page -->
 		<footer> 
 			<ul>
 		        <li><a href="credits.php">Credits</a></li>

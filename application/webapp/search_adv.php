@@ -1,5 +1,5 @@
 <?php
-require_once 'app/init.php';
+require_once '../app/init.php';
 
 if(isset($_GET['q'])) {
 
@@ -35,7 +35,7 @@ if(isset($_GET['q'])) {
 		<meta charset="utf-8"/>
 		<title>Collabora BDD</title>
 		<link rel="stylesheet" type="text/css" href="../styles/index_style.css">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	
 <!-- Corps de la page -->
@@ -45,7 +45,7 @@ if(isset($_GET['q'])) {
 		<div class="separator"></div> <!-- top lign de séparation -->
 
 		<div id="header"> <!-- Menu de navigation et logo -->
-			<a href="../index.php" class=title>Collabora</a>
+			<a href="index.php" class=title>Collabora</a>
 			<nav>
 				<ul>
 					<li><a href="form.php">Contribuer</a></li>
