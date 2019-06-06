@@ -3,7 +3,7 @@ require_once '../app/init.php';
 
 try
 {
-  $bdd= new PDO("mysql:host=localhost;dbname=collabora","root", "");
+  $bdd= new PDO("mysql:host=localhost;dbname=collabora","phpmyadmin", "root");
 }
 catch (Exception $e)
 {
@@ -14,7 +14,6 @@ echo "<HTML>
 <META charset=\"utf-8\" />
 <link rel=\"stylesheet\" href=\"../styles/form_style.css\" />
   <link rel=\"stylesheet\" href=\"//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css\">
-  <link rel=\"stylesheet\" href=\"/resources/demos/style.css\">
   <link href=\"../css/bootstrap.min.css\" rel=\"stylesheet\">
   <script src=\"https://code.jquery.com/jquery-1.12.4.js\"></script>
   <script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.js\"></script>

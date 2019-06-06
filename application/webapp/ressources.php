@@ -1,5 +1,5 @@
 <?php
-require_once '..app/init.php';
+require_once '../app/init.php';
 
 if(isset($_GET['q'])) {
 
@@ -33,7 +33,7 @@ if(isset($_GET['q'])) {
 <!-- En tête -->
 	<head>
 		<meta charset="utf-8"/>
-		<title>Collabora - Blog</title>
+		<title>Collabora - Ressources</title>
 		<link rel="stylesheet" type="text/css" href="../styles/index_style.css">
 		<link href="../css/bootstrap.min.css" rel="stylesheet">
 	</head>
