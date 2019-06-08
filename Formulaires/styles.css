@@ -1,0 +1,26 @@
+    .infobulle {
+    position: relative;
+    display: inline;
+    width: 0px;
+    height: 0px;
+    }
+    .infobulle-texte {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    width: 200px;
+    color: #000000;
+    padding: 5px;
+    font-size: 15px;
+    background-color: #ffffe1;
+    border: 1px solid #000000;
+    }
+	
+.TabCommon {FONT: 18px Verdana; COLOR: #6D6D6D; PADDING: 5px; FONT-WEIGHT: bold; TEXT-ALIGN: center; HEIGHT: 30px; WIDTH: 1000px;}
+.TabContent {PADDING: 5px;}
+.TabContentBottom {PADDING: 10px; BORDER-BOTTOM: 2px outset #99ccff;}
+.TabOff {CURSOR: hand; BACKGROUND-COLOR: #E2E2E3; BORDER-LEFT: 1px solid #BBBBBB;}
+.TabOn {CURSOR: default; BORDER-TOP: 2px outset #D1D1D1; COLOR: #000000;}
+.TabBorderBottom{BORDER-BOTTOM: 2px inset #D1D1D1;}
+.TabActiveBorderLeftRight{BORDER-RIGHT: 2px outset #D1D1D1; BORDER-LEFT: 2px outset #D1D1D1;}
+.TabActiveBackground {BACKGROUND-COLOR: #F7F8F3;}
