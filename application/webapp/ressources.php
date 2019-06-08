@@ -34,7 +34,7 @@ if(isset($_GET['q'])) {
 	<head>
 		<meta charset="utf-8"/>
 		<title>Collabora - Ressources</title>
-		<link rel="stylesheet" type="text/css" href="../styles/index_style.css">
+		<link rel="stylesheet" type="text/css" href="../styles/ressources_style.css">
 		<link href="../css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	
@@ -80,8 +80,10 @@ if(isset($_GET['q'])) {
 	    		<button class="login-button" type="submit">Login</button>
 	    	</form>
 	    </div>
+
 <!-- Bouton d'inscription -->
 		<button class="signup-button" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
+
 <!-- Fenêtre d'inscription -->
 		<div id="id01" class="modal">
 		  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</span>
@@ -108,7 +110,11 @@ if(isset($_GET['q'])) {
 		  </form>
 		</div>
 
-		<p>Blog</p>
+		<h1 style="color:white">Ressources</h1> <br><br><br>
+
+		<h2 class="ressource">Documents installation</h2><br>
+		<h2 class="ressource">Rapport et présentation</h2><br>
+		<h2 class="ressource">Autres ressources</h2><br>
 
 <!-- Pied de page -->
 		<footer> 

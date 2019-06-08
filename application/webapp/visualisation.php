@@ -79,8 +79,10 @@ if(isset($_GET['q'])) {
 	    		<button class="login-button" type="submit">Login</button>
 	    	</form>
 	    </div>
+
 <!-- Bouton d'inscription -->
 		<button class="signup-button" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
+
 <!-- Fenêtre d'inscription -->
 		<div id="id01" class="modal">
 		  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</span>
@@ -106,6 +108,11 @@ if(isset($_GET['q'])) {
 		    </div>
 		  </form>
 		</div>
+
+		<h1 style="color:white">Visualisation</h1>
+
+		<!-- IFrame Kibana -->
+
 
 		<!-- Pied de page -->
 		<footer> 

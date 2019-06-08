@@ -69,8 +69,10 @@ function TabClick( nTab ){
           <button class=\"login-button\" type=\"submit\">Login</button>
         </form>
       </div>
+
 <!-- Bouton d'inscription -->
     <button class=\"signup-button\" onclick=\"document.getElementById('id01').style.display='block'\">Sign Up</button>
+
 <!-- Fenêtre d'inscription -->
     <div id=\"id01\" class=\"modal\">
       <span onclick=\"document.getElementById('id01').style.display='none'\" class=\"close\" title=\"Close Modal\">X</span>
@@ -96,6 +98,9 @@ function TabClick( nTab ){
         </div>
       </form>
     </div>
+
+<h1 style=\"color:white\">Contribuerntribuer</h1>
+
   <TABLE CELLPADDING=0 CELLSPACING=0 ALIGN=\"center\" STYLE=\"width: 750px\">
       <TR>
           <TD CLASS=\"TabBorderBottom TabCommon TabOff\" id=\"tabs\" name=\"tabs\" ONCLICK=\"TabClick(0);\"><NOBR>Etape 1</NOBR></TD>

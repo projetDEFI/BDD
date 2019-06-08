@@ -96,16 +96,6 @@ nav a{
   	border: 2px solid #3d82ac;
   	border-radius: 5px;
 }
-/*sous-lignage navbar 
-.line {
-	width: :10px;
-	height: 4px;
-	background-color: #FFF;
-	position:relative;
-	bottom:155px;
-	margin-right: 960px;
-	left: 820px;
-}*/
 /* login/signup*/
 .login-container {
   float: left;
@@ -237,21 +227,32 @@ hr {
   display: table;
 }
 #container {
-	height: 400px;
-	margin-top: 100px;
+	height: 500px;
+	margin-top: 50px;
 	background-color: #92d2c1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 #main {
-	height: 200px;
-	width: 900px;
+	height: 450px;
+	width: 1000px;
 	background-color: #103852;
-	float: left;
+  color: white;
+  display: flex;
+    align-items: center;
+  flex-direction: column;
 }
 #about {
-	height: 200px;
-	width: 200px;
+	height: 250px;
+	width: 400px;
 	background-color: #3d82ac;
-	float: right;
+  color: black;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-radius: 20px;
 }
 /*pied de page*/
 footer {

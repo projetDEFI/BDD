@@ -1,0 +1,285 @@
+/*
+Color Panel =>
+Bleu fonce : #103852
+Bleu clair : #3d82ac
+Vert foncé : #5cbb8a
+Vert clair : #92d2c1
+Jaune : #f3de6b
+*/
+
+/*Fonts declaration*/
+/*Font logo*/
+@font-face {
+	font-family: "Vitreous";
+	src: url('../media/fonts/Vitreous-Light.ttf');
+}
+/*Font titre*/
+@font-face {
+	font-family: "Questrial";
+	src: url('../media/fonts/Questrial-Regular.ttf');
+}
+/*Fonts text*/
+@font-face {
+	font-family: "Alegreya";
+	src: url('../media/fonts/Alegreya-Regular.ttf');
+}
+@font-face {
+	font-family: "Alegreya Italic";
+	src: url('../media/fonts/Alegreya-Italic.ttf');
+}
+@font-face {
+	font-family: "Alegreya Bold";
+	src: url('../media/fonts/Alegreya-Bold.ttf');
+}
+body {
+  	background-color: rgba(16,56,82,0.8);
+  	background-image: url(../media/images/image_background.jpg);
+  	background-position:center center;
+}
+/*ligne de séparation top*/
+.separator {
+	height: 15px;
+	background-color: #f3de6b;
+	position:relative;
+	bottom:10px;
+}
+/*logo Collabora*/
+.title {
+	color: #f3de6b;
+	text-decoration: none;
+	margin: 0 auto 100px;
+	font-family: "Vitreous", sans-serif;
+	font-size: 70px;
+}
+/*menu de navigation*/
+nav{
+	max-width:700px;
+	font-family: "Questrial", sans-serif;
+	font-size: 25px;
+}
+nav ul{
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+nav li{
+	list-style-type: none;
+	float: left;
+}
+nav a{
+	padding: 20px 30px;
+	display: inline-block;
+	text-decoration: none;
+	color: #FFF;
+}
+/*Barre de recherche*/
+.search {
+	width: 300px;
+	float: right;
+}
+.barre {
+	width:200px;
+  	height: 22px;
+  	border: 2px solid #3d82ac;
+  	border-radius: 5px;
+  	background: #3d82ac;
+}
+.search-form {
+	font-family: "Questrial", sans-serif;
+  	text-transform: uppercase;
+  	color: #FFF;
+  	font-size: 14px;
+  	background: #3d82ac;
+  	outline: 0;
+  	width:200px;
+  	height: 30px;
+  	border: 2px solid #3d82ac;
+  	border-radius: 5px;
+}
+/*sous-lignage navbar 
+.line {
+	width: :10px;
+	height: 4px;
+	background-color: #FFF;
+	position:relative;
+	bottom:155px;
+	margin-right: 960px;
+	left: 820px;
+}*/
+/* login/signup*/
+.login-container {
+  float: left;
+}
+/* style des champs input login/signup */
+.login input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-family: "Questrial", sans-serif;
+  font-size: 17px;
+  border: none;
+  width: 150px;
+}
+/* bouton login */
+.login-container button {
+  padding: 6px;
+  margin-top: 8px;
+  background: #ddd;
+  font-family: "Questrial", sans-serif;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.login-container button:hover {
+  background: #ccc;
+/* bouton signup */
+}
+.signup-button {
+  padding: 6px;
+  margin-top: 8px;
+  margin-left: 2px;
+  background: #ddd;
+  font-family: "Questrial", sans-serif;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.signup-button:hover {
+  background: #ccc;
+}
+/* Pop-up SignUp*/
+* {box-sizing: border-box}
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+/* Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; 
+  font-family: "Questrial", sans-serif;
+  background-color: #103852;
+  padding-top: 50px;
+}
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+}
+/* Boutons du form d'inscription */
+.popup {
+  background-color: #3d82ac;
+  font-family: "Questrial", sans-serif;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.popup:hover {
+  opacity:1;
+}
+/* Bordures */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+/* bouton de fermeture (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-family: "Questrial", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f3de6b;
+}
+.close:hover,
+.close:focus {
+  color: #f1f1f1 ;
+  cursor: pointer;
+}
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+#container {
+	height: 400px;
+	margin-top: 100px;
+	background-color: #92d2c1;
+}
+#main {
+	height: 200px;
+	width: 900px;
+	background-color: #103852;
+	float: left;
+}
+#about {
+	height: 200px;
+	width: 200px;
+	background-color: #3d82ac;
+	float: right;
+}
+.ressource {
+  border-left: 5px solid #f3de6b;
+  background-color: #92d2c1;
+  width: 900px;
+  margin-left: 3%;
+}
+/*pied de page*/
+footer {
+	margin-top: 20px;
+	background-color: #f3de6b;
+	clear: both;
+	font-family: "Questrial", sans-serif;
+	font-size: 15px;
+	text-align: center;
+}
+footer ul{
+	margin: 0px;
+	padding: 0px;
+}
+footer li{
+	display:inline;
+ 	padding:0;
+    margin:0;
+}
+footer a{
+	padding: 20px 30px;
+	display: inline-block;
+	text-decoration: none;
+	color: #103852;
+}

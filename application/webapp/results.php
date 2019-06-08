@@ -147,7 +147,7 @@ if(isset($_GET['q'])) {
       </form>
     </div>
 
-
+    <h1 style="color:white">Résultats de recherche</h1>
 
 <!-- Pied de page -->
     <footer> 
