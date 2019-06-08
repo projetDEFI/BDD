@@ -9,6 +9,31 @@ catch (Exception $e)
 {
   die("Erreur: ".$e->getMessage());
 } 
+
+if(isset($_GET['q'])) {
+
+  $q = $_GET['q'];
+
+  $query = $es->search([
+    'body' => [
+        'query' => [
+            'bool' => [
+          'should' => [
+        [ "match" => ["nom_projet" => $q]],
+        [ "match" => ["nom_domaine" => $q]]
+    
+          ]
+        ]
+                ]
+      ]
+  ]);
+
+  if($query['hits']['total'] >=1 ) {
+
+    $results = $query['hits']['hits'];
+  }
+}
+
 echo "<HTML>
 <HEAD> <TITLE>Collabora - Suggérer une plateforme </TITLE>
 <META charset=\"utf-8\" />
@@ -99,9 +124,9 @@ function TabClick( nTab ){
       </form>
     </div>
 
-<h1 style=\"color:white\">Contribuerntribuer</h1>
+<h1 style=\"color:white; margin-left:200px\">Contribuer</h1>
 
-  <TABLE CELLPADDING=0 CELLSPACING=0 ALIGN=\"center\" STYLE=\"width: 750px\">
+  <TABLE CELLPADDING=0 CELLSPACING=0 ALIGN=\"center\" STYLE=\"width: 1200px;margin-top:50px\">
       <TR>
           <TD CLASS=\"TabBorderBottom TabCommon TabOff\" id=\"tabs\" name=\"tabs\" ONCLICK=\"TabClick(0);\"><NOBR>Etape 1</NOBR></TD>
           <TD CLASS=\"TabBorderBottom TabCommon TabOff\" id=\"tabs\" name=\"tabs\" ONCLICK=\"TabClick(1);\"><NOBR>Etape 2</NOBR></TD>
@@ -287,7 +312,6 @@ Charte d'utilisation : <input type=\"radio\" name=\"charte\" value=\"1\"> Oui
 Nombre d'utilisateurs : <input type=\"texte\" name=\"nombre_contributeur\">   </DIV> 
      
      
-     
          <DIV id=\"Content\" name=\"Content\"><h2> Etape 3/4 : Données </h2>
      
 <br> Données entrées : <table STYLE=\"width: 385px\">" ;
@@ -425,30 +449,6 @@ Préciser le lien avec le site web de l'institution  : <br>
     </footer>
 </BODY>
 </HTML> " ;
-
-if(isset($_GET['q'])) {
-
-  $q = $_GET['q'];
-
-  $query = $es->search([
-    'body' => [
-        'query' => [
-            'bool' => [
-          'should' => [
-        [ "match" => ["nom_projet" => $q]],
-        [ "match" => ["nom_domaine" => $q]]
-    
-          ]
-        ]
-                ]
-      ]
-  ]);
-
-  if($query['hits']['total'] >=1 ) {
-
-    $results = $query['hits']['hits'];
-  }
-}
 
 ?>
 

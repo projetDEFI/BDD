@@ -112,6 +112,12 @@ if(isset($_GET['q'])) {
 		
 		<h1 style="color:white">Contact</h1>
 
+		<div style="background-color: #3d82ac; width: 1200px ; height: 450px; margin-left: 90px; padding: 30px">
+			<p style="font-size: 20px;color:#f3de6b;">MAIL : <br>
+				Adresse :<br><br><br><br><br>
+				Formulaire de contact :</p>
+		</div>
+
 <!-- Pied de page -->
 		<footer> 
 			<ul>
