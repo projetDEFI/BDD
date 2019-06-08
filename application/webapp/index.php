@@ -73,9 +73,9 @@ if(isset($_GET['q'])) {
 
 <!-- Menu de connexion -->
 	  	<div class="login-container"> 
-	    	<form class="login" action="connexion.php">
+	    	<form class="login" action="../script/connexion.php" method="POST">
 	    		<input type="text" placeholder="Username" name="username">
-	    		<input type="text" placeholder="Password" name="psw">
+	    		<input type="password" placeholder="Password" name="psw">
 	    		<button class="login-button" type="submit">Login</button>
 	    	</form>
 	    </div>
