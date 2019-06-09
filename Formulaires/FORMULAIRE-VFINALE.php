@@ -139,8 +139,9 @@ echo "</table> " ;
 
 echo "<br><br> Objectif(s) et enjeu(x) detailles <br><textarea name=\objectif_det\" cols=\"80\" rows=\"2.5\">Copier/coller le texte present sur la plateforme </textarea> "; 
 
+$annee=date("Y") ;
 echo "<br><br> Date de creation de la plateforme : " ;
-echo "<input type=\"number\" min=\"1980\" max=\"2099\">";
+echo "<input type=\"number\" min=\"1980\" max=\"$annee\">";
 
 echo " <br> <br> Statut de la plateforme : " ;
 echo "       <input type=\"radio\" id=\"active\" name=\"statut\" value=\"Active\"> "; 
