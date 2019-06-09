@@ -61,7 +61,7 @@ function TabClick( nTab ){
 
 <FORM action=\"traitement.php\" method=\"post\">" ;
 
-#saisie du nom et de l'url
+
 echo " <TABLE STYLE=\"width: 600px\"><TR><TD align=\"left\">Nom du projet <span style=\"color:#FF0000\";>*</span> <br><INPUT type=\"text\" name=\"nom_projet\"></TD><TD align=\"left\">  Url <span style=\"color:#FF0000\";>*</span><br> <INPUT type=\"text\" name=\"url_projet\" STYLE=\"width: 200px\"></TD></TR></TABLE>" ;
 
 
@@ -155,7 +155,6 @@ echo " <br><br><div class=\"ui-widget\">
   <label for=\"pilote\">Pilote(s) : <span style=\"color:#FF0000\";>*</span> </label>
   <input id=\"pilote\" name=\"pilote\" size=\"70\"> 
 </div>";
-#A VOIR : SI CHAQUE CHAMP d'AUTOCOMPLETION EST ENSUITE ENREGISTRE INDEPENDAMENT DES AUTRES (faire tests avec echo)
 
 echo "<br>Lieu du pilote :
 		<input id=\"lieupilote\" name=\"lieupilote\" />" ; 
@@ -180,21 +179,18 @@ echo " <br><br><div class=\"ui-widget\">
   <label for=\"partenaire\">Partenaire(s) : </label>
   <input id=\"partenaire\" name=\"partenaire\" size=\"70\"> 
 </div>";
-#A VOIR : SI CHAQUE CHAMP d'AUTOCOMPLETION EST ENSUITE ENREGISTRE INDEPENDAMENT DES AUTRES (faire tests avec echo)
 
 
 echo " <br><br><div class=\"ui-widget\">
   <label for=\"financeur\">Financeur(s) : </label>
   <input id=\"financeur\" name=\"financeur\" size=\"70\"> 
 </div>";
-#A VOIR : SI CHAQUE CHAMP d'AUTOCOMPLETION EST ENSUITE ENREGISTRE INDEPENDAMENT DES AUTRES (faire tests avec echo)
 
 
 echo " <br><br><div class=\"ui-widget\">
   <label for=\"institution\">Institution(s) concernée(s) : <span style=\"color:#FF0000\";>*</span> </label>
   <input id=\"institution\" name=\"institution\" size=\"70\"> 
-</div>";
-#A VOIR : SI CHAQUE CHAMP d'AUTOCOMPLETION EST ENSUITE ENREGISTRE INDEPENDAMENT DES AUTRES (faire tests avec echo) 
+</div>"; 
 
 
 echo "</DIV>
@@ -447,7 +443,7 @@ inactiveText.style.visibility = 'hidden';
 inactiveCheckbox.onchange = function() {
   if(inactiveCheckbox.checked) {
     inactiveText.style.visibility = 'visible';
-    inactiveText.value = '';  <!-- mais comment faire en sorte que le texte rentré ici s'enregistre dans date_inactive ? est-ce le champ inactive ?  ??? -->
+    inactiveText.value = ''; 
   } else {
     inactiveText.style.visibility = 'hidden';
   }
