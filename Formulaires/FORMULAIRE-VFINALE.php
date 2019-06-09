@@ -141,7 +141,7 @@ echo "<br><br> Objectif(s) et enjeu(x) detailles <br><textarea name=\objectif_de
 
 $annee=date("Y") ;
 echo "<br><br> Date de creation de la plateforme : " ;
-echo "<input type=\"number\" min=\"1980\" max=\"$annee\">";
+echo "<input type=\"number\" name=\"date_creation\" min=\"1980\" max=\"$annee\">";
 
 echo " <br> <br> Statut de la plateforme : " ;
 echo "       <input type=\"radio\" id=\"active\" name=\"statut\" value=\"Active\"> "; 
