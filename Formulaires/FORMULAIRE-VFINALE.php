@@ -59,13 +59,13 @@ function TabClick( nTab ){
           <TD COLSPAN=5 CLASS=\"TabContent TabActiveBackground TabActiveBorderLeftRight TabContentBottom\">     
          <DIV id=\"Content\" name=\"Content\"> <h2> Etape 1/4 : Informations generales </h2> 
 
-<FORM action=\"traitement-test.php\" method=\"post\">" ;
+<FORM action=\"traitement.php\" method=\"post\">" ;
 
 #saisie du nom et de l'url
-echo " <TABLE STYLE=\"width: 600px\"><TR><TD align=\"left\">Nom du projet : <INPUT type=\"text\" name=\"nom_projet\"></TD><TD align=\"right\">  Url: <INPUT type=\"text\" name=\"url_projet\" STYLE=\"width: 200px\"></TD></TR></TABLE>" ;
+echo " <TABLE STYLE=\"width: 600px\"><TR><TD align=\"left\">Nom du projet <span style=\"color:#FF0000\";>*</span> <br><INPUT type=\"text\" name=\"nom_projet\"></TD><TD align=\"left\">  Url <span style=\"color:#FF0000\";>*</span><br> <INPUT type=\"text\" name=\"url_projet\" STYLE=\"width: 200px\"></TD></TR></TABLE>" ;
 
 
-echo "<br> Domaine : <table STYLE=\"width: 740px\">" ;
+echo "<br> Domaine <span style=\"color:#FF0000\";>*</span> <table STYLE=\"width: 740px\">" ;
 $reponse= $bdd->query('SELECT * FROM domaine') ; 
 $i=0;
 $max=2; 
@@ -89,9 +89,9 @@ echo "</table> " ;
  
 
 
-echo "<br><br>Descriptif du projet : <br><textarea name=\descriptif\" cols=\"80\" rows=\"2.5\">Copier/coller le texte present sur la plateforme </textarea> " ;
+echo "<br><br>Descriptif du projet <span style=\"color:#FF0000\";>*</span> <br><textarea name=\"descriptif\" cols=\"80\" rows=\"2.5\">Copier/coller le texte present sur la plateforme </textarea> " ;
 
-echo "<br><br> Objectif(s) <table STYLE=\"width: 500px\">" ;
+echo "<br><br> Objectif(s) <span style=\"color:#FF0000\";>*</span> <table STYLE=\"width: 500px\">" ;
 $reponse= $bdd->query('SELECT * FROM objectif') ; 
 $i=0;
 $max=2; 
@@ -114,7 +114,7 @@ $reponse->closeCursor();
 echo "</table> " ; 
 
 
-echo "<br><br> Enjeu(x) <table STYLE=\"width: 550px\">" ;
+echo "<br><br> Enjeu(x) <span style=\"color:#FF0000\";>*</span> <table STYLE=\"width: 550px\">" ;
 $reponse= $bdd->query('SELECT * FROM enjeu') ; 
 $i=0;
 $max=2; 
@@ -137,30 +137,30 @@ $reponse->closeCursor();
 echo "</table> " ; 
 
 
-echo "<br><br> Objectif(s) et enjeu(x) detailles <br><textarea name=\objectif_det\" cols=\"80\" rows=\"2.5\">Copier/coller le texte present sur la plateforme </textarea> "; 
+echo "<br><br> Objectif(s) et enjeu(x) detailles <span style=\"color:#FF0000\";>*</span> <br><textarea name=\"objectif_det\" cols=\"80\" rows=\"2.5\">Copier/coller le texte present sur la plateforme </textarea> "; 
 
 $annee=date("Y") ;
 echo "<br><br> Date de creation de la plateforme : " ;
 echo "<input type=\"number\" name=\"date_creation\" min=\"1980\" max=\"$annee\">";
 
-echo " <br> <br> Statut de la plateforme : " ;
+echo " <br> <br> Statut de la plateforme <span style=\"color:#FF0000\";>*</span> " ;
 echo "       <input type=\"radio\" id=\"active\" name=\"statut\" value=\"Active\"> "; 
 echo "       <label for=\"active\">Active</label> "; 
 echo "       <input type=\"radio\" id=\"inactive\" name=\"statut\" value=\"Inactive\"> "; 
-echo "       <label for=\"inactive\">Inactive depuis le</label> "; 
+echo "       <label for=\"inactive\">Inactive depuis </label> "; 
 echo "       <input type=\"text\" id=\"inactiveValue\" name=\"inactive\"> "; 
 
 
 echo " <br><br><div class=\"ui-widget\">
-  <label for=\"pilote\">Pilote(s) : </label>
-  <input id=\"pilote\" size=\"70\"> 
+  <label for=\"pilote\">Pilote(s) : <span style=\"color:#FF0000\";>*</span> </label>
+  <input id=\"pilote\" name=\"pilote\" size=\"70\"> 
 </div>";
 #A VOIR : SI CHAQUE CHAMP d'AUTOCOMPLETION EST ENSUITE ENREGISTRE INDEPENDAMENT DES AUTRES (faire tests avec echo)
 
 echo "<br>Lieu du pilote :
 		<input id=\"lieupilote\" name=\"lieupilote\" />" ; 
 
-echo "<br>Langue(s) du pilote <font color=\"grey\"> <i> <b>(restez appuyé sur CTRL pour sélectionner plusieurs choix)</b></i></font> 
+echo "<br>Langue(s) du pilote <span style=\"color:#FF0000\";>*</span> <font color=\"grey\"> <i> <b>(restez appuyé sur CTRL pour sélectionner plusieurs choix)</b></i></font> 
     <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide1'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide1'));\" width=\"15\" height=\"15\">
     <div class=\"infobulle\">
     <div class=\"infobulle-texte\" id=\"aide1\" style=\"display: none;\"> Dans quelle(s) langue(s) la plateforme est-elle disponible (interface)?
@@ -178,21 +178,21 @@ $reponse->closeCursor();
 
 echo " <br><br><div class=\"ui-widget\">
   <label for=\"partenaire\">Partenaire(s) : </label>
-  <input id=\"partenaire\" size=\"70\"> 
+  <input id=\"partenaire\" name=\"partenaire\" size=\"70\"> 
 </div>";
 #A VOIR : SI CHAQUE CHAMP d'AUTOCOMPLETION EST ENSUITE ENREGISTRE INDEPENDAMENT DES AUTRES (faire tests avec echo)
 
 
 echo " <br><br><div class=\"ui-widget\">
   <label for=\"financeur\">Financeur(s) : </label>
-  <input id=\"financeur\" size=\"70\"> 
+  <input id=\"financeur\" name=\"financeur\" size=\"70\"> 
 </div>";
 #A VOIR : SI CHAQUE CHAMP d'AUTOCOMPLETION EST ENSUITE ENREGISTRE INDEPENDAMENT DES AUTRES (faire tests avec echo)
 
 
 echo " <br><br><div class=\"ui-widget\">
-  <label for=\"institution\">Institution(s) concernée(s) : </label>
-  <input id=\"institution\" size=\"70\"> 
+  <label for=\"institution\">Institution(s) concernée(s) : <span style=\"color:#FF0000\";>*</span> </label>
+  <input id=\"institution\" name=\"institution\" size=\"70\"> 
 </div>";
 #A VOIR : SI CHAQUE CHAMP d'AUTOCOMPLETION EST ENSUITE ENREGISTRE INDEPENDAMENT DES AUTRES (faire tests avec echo) 
 
@@ -200,19 +200,19 @@ echo " <br><br><div class=\"ui-widget\">
 echo "</DIV>
 
          <DIV id=\"Content\" name=\"Content\"><h2> Etape 2/4 : Contributeurs </h2>
-Public visé : <br>
-<textarea name=\public\" cols=\"80\" rows=\"1\">Copier/coller le texte present sur la plateforme </textarea> <br><br>
+Public visé <span style=\"color:#FF0000\";>*</span> <br>
+<textarea name=\"public\" cols=\"80\" rows=\"1\">Copier/coller le texte present sur la plateforme </textarea> <br><br>
 Conditions de contribution : 
     <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide2'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide2'));\" width=\"15\" height=\"15\">
     <div class=\"infobulle\">
     <div class=\"infobulle-texte\" id=\"aide2\" style=\"display: none;\"> 
 	Quelles sont les compétences ou conditions exigées pour le contributeur ? (par exemple: Parrainage / Savoir / Compétences /Jugement / Production de connaissances)
     </div>
-    </div>	<br>
-<textarea name=\condition_contrib\" cols=\"80\" rows=\"1.5\"></textarea>  <br><br>	 
-Compte contributeur : <input type=\"radio\" name=\"compte_contri\" value=\"1\"> Oui
+    </div> <span style=\"color:#FF0000\";>*</span>	<br>
+<textarea name=\"condition_contrib\" cols=\"80\" rows=\"1.5\"></textarea>  <br><br>	 
+Compte contributeur : <span style=\"color:#FF0000\";>*</span> <br> <input type=\"radio\" name=\"compte_contri\" value=\"1\"> Oui
 <input type=\"radio\" name=\"compte_contri\" value=\"0\"> Non <br><br>
-Historique de l'activité : <input type=\"radio\" name=\"historique\" value=\"1\"> Oui
+Historique de l'activité : <span style=\"color:#FF0000\";>*</span> <br> <input type=\"radio\" name=\"historique\" value=\"1\"> Oui
 <input type=\"radio\" name=\"historique\" value=\"0\"> Non <br><br>
 
 Caractéristiques du profil contributeur 
@@ -221,9 +221,9 @@ Caractéristiques du profil contributeur
     <div class=\"infobulle-texte\" id=\"aide3\" style=\"display: none;\"> Préciser les caractéristiques du profil (nom, photo, points…)
     </div>
     </div>	<br>
-<textarea name=\carac_contributeur\" cols=\"80\" rows=\"1.5\"></textarea> <br><br>
+<textarea name=\"carac_contributeur\" cols=\"80\" rows=\"1.5\"></textarea> <br><br>
 
-Rémunération des contributeurs : <input type=\"radio\" name=\"remuneration\" value=\"1\"> Oui
+Rémunération des contributeurs : <span style=\"color:#FF0000\";>*</span> <br> <input type=\"radio\" name=\"remuneration\" value=\"1\"> Oui
 <input type=\"radio\" name=\"remuneration\" value=\"0\"> Non <br><br>
 Type de rémunération : 
     <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide4'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide4'));\" width=\"15\" height=\"15\">
@@ -232,9 +232,9 @@ Type de rémunération :
 	Par exemple : Monétaire, échange, droit d'accès...
     </div>
     </div>	<br>
-<textarea name=\type_remuneration\" cols=\"80\" rows=\"1.5\"></textarea> <br><br>
+<textarea name=\"type_remuneration\" cols=\"80\" rows=\"1.5\"></textarea> <br><br>
 
-Niveau de participation : <br> <TABLE STYLE=\"width: 500px\"> <TR> <TD><p onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide_crowd'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide_crowd'));\" width=\"15\" height=\"15\"><input type=\"radio\" name=\"niveau_participation\" value=\"Crowdsourcing\">
+Niveau de participation : <span style=\"color:#FF0000\";>*</span> <br> <TABLE STYLE=\"width: 500px\"> <TR> <TD><p onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide_crowd'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide_crowd'));\" width=\"15\" height=\"15\"><input type=\"radio\" name=\"niveau_participation\" value=\"Crowdsourcing\">
  Crowdsourcing       <span class=\"infobulle\">
     <span class=\"infobulle-texte\" id=\"aide_crowd\" style=\"display: none;\"> 
 	Les citoyens contribuent comme capteurs de données <i>(sensors)</i></span>
@@ -253,7 +253,7 @@ Niveau de participation : <br> <TABLE STYLE=\"width: 500px\"> <TR> <TD><p onmous
 	La recherche est collaborative dans les différentes phases (définition des problèmes, collecte de données, analyse).</span>
 </span> </p> </TD></TR></TABLE> <br>
 
-Validation : <input type=\"radio\" name=\"validation\" value=\"1\"> Oui
+Validation : <span style=\"color:#FF0000\";>*</span> <br> <input type=\"radio\" name=\"validation\" value=\"1\"> Oui
 <input type=\"radio\" name=\"validation\" value=\"0\"> Non <br><br>
 Type de validation : 
     <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide5'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide5'));\" width=\"15\" height=\"15\">
@@ -262,9 +262,9 @@ Type de validation :
 	Décrire les modes de validation (par les pairs, par l'institution, etc.). Préciser si enrichissement supplémentaire par l'institution.
     </div>
     </div>	<br>
-<textarea name=\type_validation\" cols=\"80\" rows=\"1.5\"></textarea> <br><br>
+<textarea name=\"type_validation\" cols=\"80\" rows=\"1.5\"></textarea> <br><br>
 
-Charte d'utilisation : <input type=\"radio\" name=\"charte\" value=\"1\"> Oui
+Charte d'utilisation : <span style=\"color:#FF0000\";>*</span> <br> <input type=\"radio\" name=\"charte\" value=\"1\"> Oui
 <input type=\"radio\" name=\"charte\" value=\"0\"> Non <br><br>
 
 Nombre d'utilisateurs : <input type=\"texte\" name=\"nombre_contributeur\">		</DIV> 
@@ -273,7 +273,7 @@ Nombre d'utilisateurs : <input type=\"texte\" name=\"nombre_contributeur\">		</D
 		 
          <DIV id=\"Content\" name=\"Content\"><h2> Etape 3/4 : Données </h2>
 		 
-<br> Données entrées : <table STYLE=\"width: 385px\">" ;
+<br> Données entrées <span style=\"color:#FF0000\";>*</span><table STYLE=\"width: 385px\">" ;
 $reponse= $bdd->query('SELECT * FROM donnees_entrees') ; 
 $i=0;
 $max=2; 
@@ -296,7 +296,7 @@ $reponse->closeCursor();
 echo "</table> " ; 
  
 
-echo "<br><br> Données produites : <table STYLE=\"width: 500px\">" ;
+echo "<br><br> Données produites <span style=\"color:#FF0000\";>*</span><table STYLE=\"width: 500px\">" ;
 $reponse= $bdd->query('SELECT * FROM donnees_produites') ; 
 $i=0;
 $max=2; 
@@ -319,7 +319,7 @@ $reponse->closeCursor();
 echo "</table> " ; 
 
 
-echo "<br><br>Statut des données produites : <table STYLE=\"width: 520px\">" ;
+echo "<br><br>Statut des données produites <span style=\"color:#FF0000\";>*</span><table STYLE=\"width: 520px\">" ;
 $reponse= $bdd->query('SELECT * FROM statut_donnees_produites') ; 
 $i=0;
 $max=3; 
@@ -343,7 +343,7 @@ echo "</table> " ;
 
 
 
-echo "<br><br>Tâche : <br> <table STYLE=\"width: 500px\">" ;
+echo "<br><br>Tâche <span style=\"color:#FF0000\";>*</span><br> <table STYLE=\"width: 500px\">" ;
 $reponse= $bdd->query('SELECT * FROM tache') ; 
 $i=0;
 $max=3; 
@@ -368,10 +368,8 @@ echo "</table> " ;
 
 
 
-
-
 echo "<br><br>Couverture géographique des données :
-	<input id=\"couverturegeo\" name=\"couverturegeo\" />" ; 
+		<input id=\"couverturegeo\" name=\"couverture_geo\" />" ; 
 
 echo "<br>Couverture chronologique des données : <TABLE STYLE=\"width: 700px\"> <TR><TD>
 <input type=\"radio\" name=\"couverturechrono\" value=\"Prehistoire\"> Préhistoire </TD><TD>
@@ -385,18 +383,18 @@ echo "<br>Couverture chronologique des données : <TABLE STYLE=\"width: 700px\">
 <input type=\"radio\" name=\"couverturechrono\" value=\"Epoque contemporaine\"> Epoque contemporaine (présent) </TD></TR>	 </TABLE>
 
 <br><br> Degré d'avancement de la saisie : <br>
-<textarea name=\degre_avancement\" cols=\"80\" rows=\"1.5\"></textarea>	" ; 	 
+<textarea name=\"degre_avancement\" cols=\"80\" rows=\"1.5\"></textarea>	" ; 	 
 	
 	
 echo "        </DIV> <DIV id=\"Content\" name=\"Content\"><h2> Etape 4/4 : Dispositif - Interface </h2>
 <fieldset>
         <legend><i>Données</i></legend>
-Consultation des données : <input type=\"radio\" name=\"consulter_donnees\" value=\"1\"> Oui
+Consultation des données <span style=\"color:#FF0000\";>*</span> <br> <input type=\"radio\" name=\"consulter_donnees\" value=\"1\"> Oui
 <input type=\"radio\" name=\"consulter_donnees\" value=\"0\"> Non <br><br>	
-Téléchargement des données : <input type=\"radio\" name=\"telecharger_donnees\" value=\"1\"> Oui
+Téléchargement des données <span style=\"color:#FF0000\";>*</span> <br> <input type=\"radio\" name=\"telecharger_donnees\" value=\"1\"> Oui
 <input type=\"radio\" name=\"telecharger_donnees\" value=\"0\"> Non <br><br>
 Statut des données téléchargées : <br>
-<textarea name=\statut_donnees_telechargees\" cols=\"80\" rows=\"1.5\"></textarea>		 
+<textarea name=\"statut_donnees_telechargees\" cols=\"80\" rows=\"1.5\"></textarea>		 
 </fieldset>
 <br>Outils de communication interne : 
     <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide6'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide6'));\" width=\"15\" height=\"15\">
@@ -405,8 +403,8 @@ Statut des données téléchargées : <br>
 	Y a-t-il des outils de communication intégrés à la plateforme ? Qui peut communiquer avec qui ?
     </div>
     </div>	<br>
-<textarea name=\outils_com_interne\" cols=\"80\" rows=\"1.5\"></textarea> <br><br>	 
-Lien avec les médias sociaux : <input type=\"radio\" name=\"lien_medias_sociaux\" value=\"1\"> Oui
+<textarea name=\"outils_com_interne\" cols=\"80\" rows=\"1.5\"></textarea> <br><br>	 
+Lien avec les médias sociaux <span style=\"color:#FF0000\";>*</span> <br> <input type=\"radio\" name=\"lien_medias_sociaux\" value=\"1\"> Oui
 <input type=\"radio\" name=\"lien_medias_sociaux\" value=\"0\"> Non <br><br>		 
 Préciser les médias sociaux : 
     <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide7'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide7'));\" width=\"15\" height=\"15\">
@@ -415,7 +413,7 @@ Préciser les médias sociaux :
 	Préciser s'il y a des hashtags, pages FB ou autres utilisés par les contributeurs (préciser l'url)
     </div>
     </div>	<br>
-<textarea name=\media_sociaux_det\" cols=\"80\" rows=\"1.5\"></textarea> 
+<textarea name=\"media_sociaux_det\" cols=\"80\" rows=\"1.5\"></textarea> 
 <br><br>
 Lien avec le site web de l'institution 
     <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Info_icon_002.svg/1200px-Info_icon_002.svg.png\" class=\"infobulle-icone\" onmouseover=\"javascript: afficher_infobulle(document.getElementById('aide8'));\" onmouseout=\"javascript: afficher_infobulle(document.getElementById('aide8'));\" width=\"15\" height=\"15\">
@@ -423,12 +421,12 @@ Lien avec le site web de l'institution
     <div class=\"infobulle-texte\" id=\"aide8\" style=\"display: none;\"> 
 	Y a-t-il une valorisation des résultats sur le site de l'institution ?
     </div>
-    </div> <br><input type=\"radio\" name=\"lien_institution\" value=\"1\"> Oui
+    </div> <span style=\"color:#FF0000\";>*</span> <br><input type=\"radio\" name=\"lien_institution\" value=\"1\"> Oui
 <input type=\"radio\" name=\"lien_institution\" value=\"0\"> Non <br><br>	
 Préciser le lien avec le site web de l'institution  : <br>
-<textarea name=\lien_institution_det\" cols=\"80\" rows=\"1.5\">Sous quelle forme ? (Préciser l'url)</textarea> 	 
+<textarea name=\"lien_institution_det\" cols=\"80\" rows=\"1.5\">Sous quelle forme ? (Préciser l'url)</textarea> 	 
 <br><br>Références bibliographiques  : <br>
-<textarea name=\ref_biblio\" cols=\"80\" rows=\"1.5\"></textarea> 	
+<textarea name=\"ref_biblio\" cols=\"80\" rows=\"1.5\"></textarea> 	
 
 <br><br> <center><INPUT type=\"submit\" value=\"Valider et envoyer\" style=\"font-size:20px\"> </center> </form>	 
       </DIV> </TD>
